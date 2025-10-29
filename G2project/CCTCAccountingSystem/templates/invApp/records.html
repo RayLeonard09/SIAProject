@@ -10,6 +10,9 @@
 /* Select2 dropdown fix */
 .select2-container { z-index: 1060 !important; }
 
+/* Remove Bootstrap modal backdrop (no dimming light) */
+.modal-backdrop { display: none !important; }
+
 /* Tab styling */
 #addEntryModal .nav-tabs .nav-link { color: #000; font-weight: 500; }
 #addEntryModal .nav-tabs .nav-link.active { color: #fff; background-color: #0d6efd; }
@@ -81,7 +84,7 @@
 
 {% if request.user.is_staff %}
 <!-- Add Student / Bill Modal -->
-<div class="modal fade" id="addEntryModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="addEntryModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false" data-bs-keyboard="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-gradient text-white rounded-top-4" style="background: linear-gradient(90deg, #0d6efd, #00b4d8);">
@@ -141,7 +144,7 @@
 </div>
 
 <!-- Edit Bill Modal -->
-<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false" data-bs-keyboard="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content shadow-lg border-0 rounded-4">
       <div class="modal-header bg-warning text-dark rounded-top-4">
